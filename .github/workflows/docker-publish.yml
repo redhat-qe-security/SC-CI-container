@@ -1,4 +1,4 @@
-name: Publish container images to DockerHub
+name: Publish base smart card container image to DockerHub
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'main'
 
 jobs:
-  docker:
+  docker-base-sc-image:
     runs-on: ubuntu-latest
     steps:
       -
@@ -30,4 +30,4 @@ jobs:
         with:
           context: ./base/
           push: true
-          tags: plovec/centos-stream8-smartcards:latest
+          tags: plovec/rhel8-smartcards:latest
