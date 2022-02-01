@@ -1,6 +1,5 @@
-FROM quay.io/centos/centos:stream8
+FROM registry.access.redhat.com/ubi8/ubi:8.5-214
 
-RUN dnf install python3 python3-pip sudo -y
-RUN pip3 install pytest
+RUN yum install python3 python3-pip sudo -y && pip3 install pytest
 
 CMD ["/bin/sh"]
