@@ -15,4 +15,4 @@ jobs:
             with:
                 token: ${{ secrets.SCAUTOLIB_REPO_TOKEN }}
                 repository: x00Pavel/SCAutolib
-                event-type: test
+                event-type: test-from-dispatch
