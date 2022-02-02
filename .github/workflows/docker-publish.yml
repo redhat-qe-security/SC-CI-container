@@ -1,6 +1,8 @@
 name: Publish base smart card container image to DockerHub
 
 on:
+  schedule:
+    - cron: * * * * 0
   push:
     branches:
       - 'main'
