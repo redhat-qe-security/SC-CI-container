@@ -1,0 +1,18 @@
+name: Triger repository_dispatch even on dependet projects
+
+on:
+    workflow_run:
+        workflows: ["Publish base smart card container image to DockerHub"]
+        types:
+            - completed
+
+jobs:
+  trigger-dispatch:
+      runs-on: ubuntu-latest
+      steps:
+          - name: Repository Dispatch
+            uses: peter-evans/repository-dispatch@v1
+            with:
+                token: ${{ secrets.SCAUTOLIB_REPO_TOKEN }}
+                repository: x00Pavel/SCAutolib
+                event-type: test
