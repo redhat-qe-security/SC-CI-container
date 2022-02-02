@@ -7,4 +7,5 @@ RUN dnf update -y && \
     python3 -m pip install pytest ; \
     echo "redhat" | passwd root --stdin
 
+
 CMD ["/bin/sh"]
